@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+		title= title
+		link(href='/stylesheets/tyyli.css', rel='stylesheet')
+	body
+		nav
+			a(href='/')= 'Etusivu'
+			a(href='/nimilista')= 'Käyttäjälista'
+			a(href='/uusikayttaja')= 'Käyttäjien lisääminen'
+			a(href='/heimaailma')= 'Hei maailma!'
+		block content
