@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1= title
+	form#formLisaaKayttaja(name="lisaakayttaja", method="post", action="/lisaakayttaja")
+		input#inputKayttajaNimi(type="text", placeholder="Nimi", name="kayttajanimi")
+		input#inputSahkoposti(type="text", placeholder="Sähköpostiosoite", name="kayttajasahkoposti")
+		button#buttonLaheta(type="submit") Submit

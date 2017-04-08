@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	h1= title
+	p Tervetuloa meidän testiimme
+	
+	// Wrapper
+	#wrapper
+	
+		// KÄYTTÄJÄ INFO
+		#kayttajaInfo
+			h2 Käyttäjä info
+			p
+				strong Nimi:
+				|  <span id='kayttajaInfoKokoNimi'></span>
+				br
+				strong Ikä:
+				|  <span id='kayttajaInfoIka'></span>
+				br
+				strong Sukupuoli:
+				|  <span id='kayttajaInfoSukupuoli'></span>
+				br
+				strong Sijainti:
+				|  <span id='kayttajaInfoSijainti'></span>
+		// /KÄYTTÄJÄ INFO
+		
+		
+		// KÄYTTÄJÄ LISTA
+		#kayttajaLista
+			h2 Käyttäjälista
+				table
+					thead
+						th KayttajaNimi
+						th Sahkoposti
+						th Poista?
+					tbody
+		// /KÄYTTÄJÄ LISTA
+		
+	// /WRAPPER
+
+

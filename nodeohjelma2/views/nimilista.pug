@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1.
+		Käyttäjälista
+	ul
+		each user, i in nimilista
+			li
+				a(href="mailto:" + user.sposti)= user.nimi
