@@ -7,6 +7,17 @@ block content
 	// Wrapper
 	#wrapper
 	
+		// KÄYTTÄJÄ LISTA
+		#kayttajaLista
+			h2 Käyttäjälista
+				table
+					thead
+						th KäyttäjäNimi
+						th Sähköposti
+						th Poista?
+					tbody
+		// /KÄYTTÄJÄ LISTA
+	
 		// KÄYTTÄJÄ INFO
 		#kayttajaInfo
 			h2 Käyttäjä info
@@ -24,17 +35,22 @@ block content
 				|  <span id='kayttajaInfoSijainti'></span>
 		// /KÄYTTÄJÄ INFO
 		
-		
-		// KÄYTTÄJÄ LISTA
-		#kayttajaLista
-			h2 Käyttäjälista
-				table
-					thead
-						th KayttajaNimi
-						th Sahkoposti
-						th Poista?
-					tbody
-		// /KÄYTTÄJÄ LISTA
+
+		// KÄYTTÄJÄN LISÄÄMINEN
+		#lisaaKayttaja
+			h2 Lisää käyttäjä
+				fieldset
+					input#inputKayttajaNimi(type='text', placeholder='Käyttäjänimi')
+					input#inputKayttajaSahkoposti(type='text', placeholder='Sähköposti')
+					br
+					input#inputKayttajaKokoNimi(type='text', placeholder='Koko nimi')
+					input#inputKayttajaIka(type='text', placeholder='Ikä')
+					br
+					input#inputKayttajaSijainti(type='text', placeholder='Sijainti')
+					input#inputKayttajaSukupuoli(type='text', placeholder='Sukupuoli')
+					br
+					button#btnLisaaKayttaja Lisää Käyttäjä
+		// /KÄYTTÄJÄN LISÄÄMINEN
 		
 	// /WRAPPER
 

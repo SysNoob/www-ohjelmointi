@@ -29,6 +29,7 @@ nav {
 	border-radius: 25px;
 	float: left;
 	margin: auto;
+	clear: both;
 }
 
 nav a {
@@ -53,3 +54,31 @@ p {
 	font-size: 1.2em;
 }
 
+#kayttajaInfo {
+	border: solid;
+	border-color: #a5a5a5;
+	float: left;
+	margin: 5px;
+	clear: none;
+}
+
+#kayttajaLista {
+	border: solid;
+	border-color: #a5a5a5;
+	float: left;
+	margin: 5px;
+	clear: none;
+}
+
+#lisaaKayttaja {
+	border: solid;
+	border-color: #a5a5a5;
+	float: left;
+	clear: none;
+	margin: 5px;
+}
+
+div {
+	overflow: auto;
+	clear: both;
+}
