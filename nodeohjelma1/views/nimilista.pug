@@ -6,4 +6,5 @@ block content
 	ul
 		each user, i in nimilista
 			li
+				//mailto linkki tietokannan nimeä vastaavaan sähköpostiin
 				a(href="mailto:" + user.sposti)= user.nimi

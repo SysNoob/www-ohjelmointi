@@ -1,9 +1,15 @@
+/*
+*===CSS Nodeohjelma1:lle===
+*/
+
+/*---Sivun oletus asetukset---*/
 body {
 	margin: 40px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 	background-color: #f6f6f6;
 }
 
+/*---Määrittää div tagin---*/
 div {
 	background-color: #f1f1f1;
 	clear: both;
@@ -11,12 +17,13 @@ div {
 	padding: 20px;
 }
 
+/*---Linkki---*/
 a {
 	color: #00B7FF;
 	padding: 0px 5px;
 }
 
-
+/*---Sisennys---*/
 li {
 	list-style-type: none;
 	font-size: 1.2em;
@@ -24,6 +31,7 @@ li {
 	right: 25px;
 }
 
+/*---Navi---*/
 nav {
 	background-color: #dddddd;
 	padding: 0px 20px;
@@ -32,6 +40,7 @@ nav {
 	margin: auto;
 }
 
+/*---Navin linkki---*/ 
 nav a {
 	color: red;
 	padding: 15px 10px;
@@ -39,17 +48,19 @@ nav a {
 	background-color: #dddddd;
 	float: left;
 }
-
-
+ 
+/*---Linkki kun hiiri on päällä---*/
 nav a:hover {
 	background-color: #6D6D6F;
 }
 
+/*---Otsikko---*/
 h1 {
 	text-decoration: underline;
 	clear: both;
 }
 
+/*---Kappaleteksti---*/
 p {
 	font-size: 1.2em;
 }
