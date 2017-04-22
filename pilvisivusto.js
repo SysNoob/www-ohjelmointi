@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var fs = require('fs'); // Kuvien näyttämiseen
 
 //Body-parser käyttöönotto Form Handlingia varten
 app.use(require('body-parser').urlencoded({extended: true}));
@@ -56,6 +57,21 @@ app.get('/pilvihavainnot',function(req, res){
 
 app.get('/pilvihavaintolomake',function(req, res){
 	res.render('pilvihavaintolomake');
+});
+
+// Etsii pilviinfo sivulle pilvelle kuuluvat kuvat
+app.get('/etsiimg/:pilvi', function(req, res) {
+	var kansio = __dirname + '/public/img/' + req.params.pilvi + '/';	//fs vaatii koko tiedosto-osoitteen
+	var tiedostot = [];	// Tiedostonimille taulukko
+	fs.readdir( kansio , function(err, files) {	// Lukee kansion sisällön
+		if(err) return;
+		
+		files.forEach(function(f) {	// jokainen tiedosto lisätään tiedostot-taulukkoon
+			console.log('files: ' + f);	// Testaamista varten
+			tiedostot.push('' + f.toString());
+		});
+		res.send(tiedostot);	// Palautetaan pilviinfo.js taulukko
+	});
 });
 
 // 404 sivu
