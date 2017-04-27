@@ -1,0 +1,71 @@
+body {
+	margin: 40px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #f6f6f6;
+}
+
+
+#body {
+	background-color: #f1f1f1;
+	border-radius: 25px;
+	padding: 20px;
+	overflow: auto;
+	clear: both;
+}
+
+
+#navigaatio {
+	background-color: #dddddd;
+	padding: 0px 20px;
+	border-radius: 25px;
+	float: left;
+	margin: auto;
+	clear: both;
+}
+
+#navigaatio a {
+	color: red;
+	padding: 15px 10px;
+	text-decoration: underline;
+	background-color: #dddddd;
+	float: left;
+}
+
+
+#navigaatio a:hover {
+	background-color: #6D6D6F;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+
+
+#infoAlue div img {
+	max-width: 300px;
+	margin: 5px;
+	image-orientation: from-image;
+	max-height: 300px;
+}
+
+#infoAlue div {
+	padding: 0;
+}
+
+#infoValinta {
+	padding: 5px;
+}
+
+#valikko {
+	font-size: 130%;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #d1d1d1;
+	background-color: #f8f8f8;
+}
+
+#infoAlue {
+	padding-top: 0;
+}

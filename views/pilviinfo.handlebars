@@ -1,14 +1,14 @@
-<h1>Pilvi-informaatiota</h1>
+<h1>Pilvisuvut</h1>
 <div id="infoValinta">
 	<select id="valikko">
-		<option selected disabled hidden>Valitse pilvi</option>
+		<option selected disabled hidden value="default">Valitse pilvi</option>
 		<option value="st">Stratus</option>
 		<option value="cu">Cumulus</option>
 		<option value="sc">Stratocumulus</option>
+		<option value="cb">Cumulonimbus</option>
 		<option value="ns">Nimbostratus</option>
 		<option value="as">Altrostratus</option>
 		<option value="ac">Altocumulus</option>
-		<option value="cb">Cumulonimbus</option>
 		<option value="ci">Cirrus</option>
 		<option value="cs">Cirrostratus</option>
 		<option value="cc">Cirrocumulus</option>
@@ -17,41 +17,64 @@
 
 <div id=infoAlue>
 	<div id="st">
-		<h2>Stratus (St)</h2>
-		<p id="nimi">Sumupilvi</p>
-		<p id="taso">Alapilvi</p>
-		<p id="desc">Tasaisen harmaa sumua muistuttava pilvi, joka esiintyy korkeuksissa noin 10 metristä 2 kilometriin asti.</p>
+		<h2>Stratus (St) - Sumupilvi</h2>
+		<h3 class="taso">Alapilvi</h3>
+		<p class="desc">Tasaisen harmaa sumua muistuttava pilvi, joka on repaleinen huonon sään aikana.</p>
 		
 	</div>
 	
 	<div id="cu">
-		<h2>Cumulus (Cu)</h2>
-		<p id="nimi">Kumpupilvi</p>
-		<p id="taso">Alapilvi</p>
-		<p id="desc">Kumpumaisia valkoisia pilviä, jotka tarpeeksi suuriksi kasvaessaan voivat muuttua harmaiksi.</p>
+		<h2>Cumulus (Cu) - Kumpupilvi</h2>
+		<h3 class="taso">Alapilvi</h3>
+		<p class="desc">Kumpumaisia valkoisia pilviä, jotka tarpeeksi suuriksi kasvaessaan voivat muuttua harmaiksi.</p>
 	</div>
 	
 	<div id="sc">
+		<h2>Stratocumulus (Sc) - Kumpukerrospilvi</h2>
+		<h3 class="taso">Alapilvi</h3>
+		<p class="desc">Suuria kumpumaisia pilviä, jotka muodostavat jonoja keskenään. Nimensä mukaan kumpupilviä, jotka ovat muodostuneet "kerrokseksi". Pilven väritys vaihtelee valkoisen ja harmaan välillä.</p>
 	</div>
+	
 	<div id="ns">
+		<h2>Nimbostratus (Ns) - Laaja sadepilvi</h2>
+		<h3 class="taso">Keskipilvi</h3>
+		<p class="desc">Harmaa muodoton pilvikerros, joka aiheuttaa tasaisen ja pitkän lumi- tai vesisateen. Mahdollisesti hyvin laaja ylittäen jopa tuhat kilometriä pituudeltaan.</p>
 	</div>
 	
 	<div id="as">
+		<h2>Altostratus (As) - Verhopilvi</h2>
+		<h3 class="taso">Keskipilvi</h3>
+		<p class="desc">Tasainen harmaan vaalea pilvikerros. Yleinen lumisateen tuottaja, mutta määrissä, jotka haihtuvat ennen maahan saapumista.</p>
 	</div>
 	
 	<div id="ac">
+		<h2>Altocumulus (Ac) - Hahtuvapilvi</h2>
+		<h3 class="taso">Keskipilvi</h3>
+		<p class="desc">Valkoisia pieniä hattaramaisia tai levymäisiä pilviä, jotka useiten ryhmittyvät yhteen.</p>
 	</div>
 	
 	<div id="cb">
+		<h2>Cumulonimbus (Cb) - Kuuro- ja ukkossadepilvi</h2>
+		<h3 class="taso">Alapilvi</h3>
+		<p class="desc">Valtava harmaa tai valkoinen pilvi, jonka voi tunnistaa usein sen kuuluisasta alasinmaisesta muodostaan. Pilven huippu voi parhaimmillaan yltää 15 kilometriin, sen pohjan ollessa kilometrin korkeudessa.</p>
 	</div>
 	
 	<div id="ci">
+		<h2>Cirrus (Ci) - Untuvapilvi</h2>
+		<h3 class="taso">Yläpilvi</h3>
+		<p class="desc">Ohut kuitumainen kirkkaan valkoinen pilvi. Pilven muotoa voidaan usein kuvailla sukseksi tai kalanruodoksi.</p>
 	</div>
 	
 	<div id="cs">
+		<h2>Cirrostratus (Cs) - Harsopilvi</h2>
+		<h3 class="taso">Yläpilvi</h3>
+		<p class="desc">Tasainen valkoinen pilvikerros, jonka läpi kuultavat aurinko ja kuu. Se voi olla hieman kuitumainen</p>
 	</div>
 	
 	<div id="cc">
+		<h2>Cirrocumulus (Cc) - Palleropilvi</h2>
+		<h3 class="taso">Alapilvi</h3>
+		<p class="desc">Valkoisia hyvin pieniä palleroimaisia pilviä, jotka yleensä ryhmittyvät yhteen.</p>
 	</div>
 	
 </div>

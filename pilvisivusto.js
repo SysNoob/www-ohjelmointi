@@ -67,7 +67,6 @@ app.get('/etsiimg/:pilvi', function(req, res) {
 		if(err) return;
 		
 		files.forEach(function(f) {	// jokainen tiedosto lisätään tiedostot-taulukkoon
-			console.log('files: ' + f);	// Testaamista varten
 			tiedostot.push('' + f.toString());
 		});
 		res.send(tiedostot);	// Palautetaan pilviinfo.js taulukko
