@@ -3,12 +3,10 @@ Kouluharjoitus
 
 Sivuston sisältö:
 Etusivu:
-  Infoa sivustosta?
+  Tervetuloa viesti ja yleistä infoa pilvistä
 
 Pilvi-informaatio:
-  Informaatiota perus pilvien asioista, esimerkkikuva?
-  Dropdown menu pilven valintaan?
-  Pilvien tiedot tietokannasta?
+  Dropdown valikko pilvisuvuille. jQuery piilottaa ei-halutut infolaatikot. Ajax kutsulla pyydetään serveriltä kaikki kuvat infolaatikolle, kun se näytetään.
 
 Pilvihavaintojen katsomis sivu:
   Tietokannasta uusimmat pilvihavainnot
