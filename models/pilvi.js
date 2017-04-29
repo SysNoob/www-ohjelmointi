@@ -10,12 +10,7 @@ var pilviSchema = mongoose.Schema({
 	taso: String
 });
 
-var pilvikuvaSchema = mongoose.Schema({
-	img: { data: Buffer, contentType: String }
-});
-
 var Pilvi = mongoose.model('Pilvi',pilviSchema);
-var PilviKuva = mongoose.model('PilviKuva',pilvikuvaSchema);
 
 module.exports = Pilvi;
-module.exports = PilviKuva;
+
