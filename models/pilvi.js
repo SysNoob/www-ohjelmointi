@@ -1,6 +1,3 @@
-// Tämä tuskin toimii, ymmärtääkseni module.exports ei oikein toimi jos se on kahteen kertaan.
-
-
 var mongoose = require('mongoose');
 
 var pilviSchema = mongoose.Schema({
