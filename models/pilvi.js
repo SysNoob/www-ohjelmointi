@@ -6,16 +6,16 @@ var mongoose = require('mongoose');
 var pilviSchema = mongoose.Schema({
 	suku: String,
 	kuvaus: String,
-	lyhenne: String,
-	taso: String
+	taso: String,
+	kuva: String,
+	maa: String,
+	kaupunki: String,
+	peite: Number,
+	paiva: Date
 });
 
-var pilvikuvaSchema = mongoose.Schema({
-	img: { data: Buffer, contentType: String }
-});
+
 
 var Pilvi = mongoose.model('Pilvi',pilviSchema);
-var PilviKuva = mongoose.model('PilviKuva',pilvikuvaSchema);
 
 module.exports = Pilvi;
-module.exports = PilviKuva;

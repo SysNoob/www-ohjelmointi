@@ -1,9 +1,45 @@
 var express = require('express');
 var app = express();
-var fs = require('fs'); // Kuvien näyttämiseen
+var fs = require('fs'); // Kuvien näyttämiseen (Mahdollistaa serverin kansion sisällön listaamisen)
 
 //Body-parser käyttöönotto Form Handlingia varten
-app.use(require('body-parser').urlencoded({extended: true}));
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+
+// MULTER ===============================================================================
+
+var path = require('path');		// Helpottaa tiedostopäätteisiin pääsemiseksi (path.extname(filename))
+var multer = require('multer'); // Kuvien vastaanottamiseen käyttäjältä
+
+var storage = multer.diskStorage({	// Käytetään tiedostojen sijainnin ja nimen määritykseen. Palauttaa funktiota.
+
+  destination: function (req, file, cb) {
+    cb(null, __dirname + '/public/img/havainnot/');	// Sijainti
+  },
+  
+  filename: function (req, file, cb) {
+  	// Luodaan oma satunnainen tiedostonimi
+  	var tiedosto = '';
+	var merkit ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	
+	do {
+		var nimi = '';
+		
+		for( var i=0; i<10; i++) {
+			// floor 'pyöristää', random antaa luvun väliltä 0-1, kertominen antaa luvun sopivalta väliltä.
+			nimi += merkit.charAt(Math.floor(Math.random() * merkit.length));
+		}
+		tiedosto = nimi + path.extname(file.originalname);
+		
+	} while (fs.existsSync(tiedosto))	// Toistetaan niin kauan, kuin samanniminen tiedosto on olemassa
+	
+    cb(null, tiedosto);	// Tiedostonimen palauttaminen
+  }
+});
+
+var upload = multer({storage: storage});	// otetaan käyttöön multerin toiminnot ja määritetään latauksen sijainti yllä luotuun storageen.
+
+// /MULTER ==============================================================================
 
 // Handlebars oletusnäkymämoottori
 var handlebars = require('express-handlebars').create({ 
@@ -21,7 +57,7 @@ app.use(express.static(__dirname + '/public'));
 // MongoDB käyttöön ottaminen
 
 var mongoose = require('mongoose');
-var pilvi = require('./models/pilvi.js');
+var Pilvi = require('./models/pilvi.js');
 var credentials = require('./credentials.js');
 
 var opts = {
@@ -57,6 +93,43 @@ app.get('/pilvihavainnot',function(req, res){
 
 app.get('/pilvihavaintolomake',function(req, res){
 	res.render('pilvihavaintolomake');
+});
+
+// Pilvihavaintolomakkeen vastaanotto
+// upload.single() käyttää multeria vastaanottamaan yhden tiedoston
+app.post('/havaintolahete', upload.single('kuva'), function(req,res) {
+
+	// Pilven tason määritys
+	var alapilvet = ["Stratus","Cumulus","Stratocumulus","Cumulonimbus"];
+	var keskipilvet = ["Altocumulus","Altostratus","Nimbostratus"];
+	var ylapilvet = ["Cirrus","Cirrostratus","Cirrocumulus"];
+	var taso = "";
+	
+	if(alapilvet.indexOf(req.body.pilviSuku) !== -1) { 
+		taso = "Alapilvi";
+	} else if(keskipilvet.indexOf(req.body.pilviSuku) !== -1) { 
+		taso = "Keskipilvi";
+	} else if(ylapilvet.indexOf(req.body.pilviSuku) !== -1) { 
+		taso = "Yläpilvi";
+	}
+	
+	// Päivä ja kellonaika
+	var paiva = new Date();
+	
+	// Lähetetään uusi pilvihavainto mlabiin
+	new Pilvi({
+		suku: req.body.pilviSuku,
+		kuvaus: req.body.kuvaus,
+		taso: taso,
+		kuva: req.file.filename,	// Tiedoston uusi nimi, jonka itse määritimme ylhäällä
+		maa: req.body.maa,
+		kaupunki: req.body.kaupunki,
+		peite: req.body.peite,
+		paiva: paiva
+	}).save();
+	
+	res.redirect(303, '/pilvihavainnot');
+	
 });
 
 // Etsii pilviinfo sivulle pilvelle kuuluvat kuvat

@@ -8,17 +8,12 @@ Etusivu:
 Pilvi-informaatio:
   Dropdown valikko pilvisuvuille. jQuery piilottaa ei-halutut infolaatikot. Ajax kutsulla pyydetään serveriltä kaikki kuvat infolaatikolle, kun se näytetään.
 
-Pilvihavaintojen katsomis sivu:
+Pilvihavaintojen katsomis sivu:	!!!!!TEKEMÄTTÄ!!!!
   Tietokannasta uusimmat pilvihavainnot
   Kuvat kaikki näkyvillä, muut tiedot näkyviin painamalla kuvaa niin kuin teht2? Vai suoraan blogimaisesti kuva ja sen alla tiedot.
 
 Pilvihavaintojen syöttämis sivu:
-  Kuvan lataaminen, tiedot formilla.
+  Kuva ja tiedot syötetään formiin. Kuva tallentuu serverille, sen tiedot mlabiin, jossa viittaus kuvan sijaintiin serverillä.
   Uudelleen ohjaus latauksen jälkeen havaintojen katsomissivulle.
-  Validointia?
+  Validointi puuttuu, kaikki tiedostot kelpaavat.
 
-
-
-HUOM!
-pilvi.js toimintaa täytyy tutkia, en usko että tulee toimimaan näin -Olavi
-Kuvien laittamista mongodb:seen täytyy tutkia miten se toimii.
