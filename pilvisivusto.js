@@ -87,8 +87,30 @@ app.get('/pilviinfo',function(req, res){
 	res.render('pilviinfo');
 });
 
-app.get('/pilvihavainnot',function(req, res){
-	res.render('pilvihavainnot');
+app.get('/pilvihavainnot:jarj?',function(req, res){
+
+	var jarjestys = -1;
+	if(req.params.jarj === "1") {
+		jarjestys = 1;
+	}
+	
+	Pilvi.find( function(err, pilvet) {
+		var konteksti = {
+			pilvet: pilvet.map(function(pilvi) {
+				return {
+					suku: pilvi.suku,
+					kuvaus: pilvi.kuvaus,
+					taso: pilvi.taso,
+					kuva: '/img/havainnot/' + pilvi.kuva,
+					maa: pilvi.maa,
+					kaupunki: pilvi.kaupunki,
+					peite: pilvi.peite,
+					paiva: pilvi.paiva.getDate() + '/' + pilvi.paiva.getMonth() + '/' + pilvi.paiva.getFullYear() ,
+				}
+			})
+		};
+		res.render('pilvihavainnot', konteksti);
+	}).sort({paiva: jarjestys});
 });
 
 app.get('/pilvihavaintolomake',function(req, res){

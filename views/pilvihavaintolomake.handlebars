@@ -5,57 +5,53 @@
 	
 	<form method="POST" action="/havaintolahete" enctype="multipart/form-data">
 	
-		<!--<fieldset>
-			<legend>Havaintojen syöttämisen lomake:</legend>-->
 			
-			<label for="pilviSuku">Pilvisuku: </label>
-			<select name="pilviSuku">
-				<option selected disabled hidden value="default">Pilven suku</option>
-				<option value="Stratus">Stratus</option>
-				<option value="Cumulus">Cumulus</option>
-				<option value="Stratocumulus">Stratocumulus</option>
-				<option value="Cumulonimbus">Cumulonimbus</option>
-				<option value="Nimbostratus">Nimbostratus</option>
-				<option value="Altrostratus">Altrostratus</option>
-				<option value="Altocumulus">Altocumulus</option>
-				<option value="Cirrus">Cirrus</option>
-				<option value="Cirrostratus">Cirrostratus</option>
-				<option value="Cirrocumulus">Cirrocumulus</option>
-			</select> 
-			</br>
-			
-			<label for="kuvaus">Kuvaus: </label> 
-			</br>
-			<textarea name="kuvaus" rows="6" cols="60">Kuvaus pilvestä ja tilanteesta</textarea>
-			</br>
-			
-			<label for="maa">Maa: </label>
-			<input type="text" name="maa">
-			</br>
-			
-			<label for="kaupunki">Kaupunki: </label>
-			<input type="text" name="kaupunki">
-			</br>
-			
-			<label for="peite">Pilvikerroksen peittävyys: </label>
-			<select name="peite">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-			</select>
-			</br>
-			
-			<label for="kuva">Valitse kuvatiedosto: </label>
-			<input type="file" name="kuva">
-			</br>
-			
-			<input type="submit" value="Lähetä">
-			
-		<!--</fieldset> -->
+		<label for="pilviSuku">Pilvisuku: </label>
+		<select name="pilviSuku">
+			<option selected disabled hidden value="default">Pilven suku</option>
+			<option value="Stratus">Stratus</option>
+			<option value="Cumulus">Cumulus</option>
+			<option value="Stratocumulus">Stratocumulus</option>
+			<option value="Cumulonimbus">Cumulonimbus</option>
+			<option value="Nimbostratus">Nimbostratus</option>
+			<option value="Altrostratus">Altrostratus</option>
+			<option value="Altocumulus">Altocumulus</option>
+			<option value="Cirrus">Cirrus</option>
+			<option value="Cirrostratus">Cirrostratus</option>
+			<option value="Cirrocumulus">Cirrocumulus</option>
+		</select> 
+		</br>
+		
+		<label for="kuvaus">Kuvaus: </label> 
+		</br>
+		<textarea name="kuvaus" rows="6" cols="60">Kuvaus pilvestä ja tilanteesta</textarea>
+		</br>
+		
+		<label for="maa">Maa: </label>
+		<input type="text" name="maa">
+		</br>
+		
+		<label for="kaupunki">Kaupunki: </label>
+		<input type="text" name="kaupunki">
+		</br>
+		
+		<label for="peite">Pilvikerroksen peittävyys: </label>
+		<select name="peite">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+		</br>
+		
+		<label for="kuva">Valitse kuvatiedosto: </label>
+		<input type="file" name="kuva">
+		</br>
+		
+		<input type="submit" value="Lähetä">
 	</form>
 </div>

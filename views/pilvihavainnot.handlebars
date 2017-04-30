@@ -1,1 +1,55 @@
-<h1>pilvihavainnot</h1>
+<div id="havaintoOtsikko">
+	<h1>Pilvihavainnot</h1>
+</div>
+
+<div class="dropdown">
+	<button class="dropbtn">Päivämäärä järjestys</button>
+	  <div id="myDropdown" class="dropdown-content">
+		<a href="/pilvihavainnot1">Nouseva</a>
+		<a href="/pilvihavainnot">Laskeva</a>
+	  </div>
+</div>
+
+<div id="havainnot">
+{{#each pilvet}}
+	<div class="pilviHavaintoDiv">
+
+		<table class="havaintoTaulukko">
+			<tr>
+				<th>Suku</th>
+				<td>{{suku}}</td>
+			</tr>
+	
+			<tr>
+				<th>Taso</th>
+				<td>{{taso}}</td>
+			</tr>
+	
+			<tr>
+				<th>Kerroksen </br> peittävyys</th>
+				<td>{{peite}} / 8</td>
+			</tr>
+	
+			<tr>
+				<th>Maa</th>
+				<td>{{maa}}</td>
+			</tr>
+			<tr>
+				<th>Kaupunki</th>
+				<td>{{kaupunki}}</td>
+			</tr>
+			<tr>
+				<th>Lähetyksen </br> päivämäärä</th>
+				<td>{{paiva}}</td>
+			</tr>
+		</table>
+		
+		<div class="havaintoKuva">
+			<a target='_blank' href={{kuva}}><img src={{kuva}} id='infoKuva'></a>
+			<div class="havaintoKuvaus">
+				{{kuvaus}}
+			</div>
+		</div>
+	</div>
+{{/each}}
+</div>
